@@ -1,0 +1,196 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:padding="30dp"
+    android:orientation="vertical" 
+    tools:context="com.hidroids.rockpaperscissors.GamePlayActivity" >
+    
+    <TextView
+	        android:id="@+id/profile_titleid"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:textColor="#555"
+	        android:gravity="center_horizontal"
+	        android:text="Home Page"
+	        android:textSize="30sp" 
+	        android:textStyle="bold" />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:background="#eee"
+        android:padding="10dp" >
+
+	    <TextView
+	        android:id="@+id/profile_usernameid"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="@string/usernamefield"
+	        android:textSize="20sp"
+	        android:textStyle="bold" />
+	    
+	    <TextView
+	        android:id="@+id/profile_username"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="username"
+	        android:textSize="20sp" />
+    
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#f8f8f8"
+        android:padding="10dp" >
+    
+	    <TextView
+	        android:id="@+id/profile_ageid"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="@string/agefield"
+	        android:textSize="20sp" 
+	        android:textStyle="bold" />
+	    
+	    <TextView
+	        android:id="@+id/profile_age"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="age"
+	        android:textSize="20sp" />
+	</LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#eee"
+        android:padding="10dp" >
+	    
+	    <TextView
+	        android:id="@+id/profile_genderid"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="@string/genderfield"
+	        android:textSize="20sp"
+	        android:textStyle="bold" />
+	    
+	    <TextView
+	        android:id="@+id/profile_gender"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="gender"
+	        android:textSize="20sp" />
+	    
+	</LinearLayout>
+	
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#f8f8f8"
+        android:padding="10dp" >
+    
+	    <TextView
+	        android:id="@+id/profile_wonid"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="@string/wonfield"
+	        android:textSize="20sp"
+	        android:textStyle="bold" />
+	    
+	    <TextView
+	        android:id="@+id/profile_won"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="won"
+	        android:textSize="20sp" />
+	    
+	</LinearLayout>
+	
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#eee"
+        android:padding="10dp" >
+    
+	    <TextView
+	        android:id="@+id/profile_lostid"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="@string/lostfield"
+	        android:textSize="20sp"
+	        android:textStyle="bold" />
+	    
+	    <TextView
+	        android:id="@+id/profile_lost"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="lost"
+	        android:textSize="20sp" />
+	    
+	</LinearLayout>
+	
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#f8f8f8"
+        android:padding="10dp" >
+    
+	    <TextView
+	        android:id="@+id/profile_drawid"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="@string/drawfield"
+	        android:textSize="20sp"
+	        android:textStyle="bold" />
+	    
+	    <TextView
+	        android:id="@+id/profile_draw"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="draw"
+	        android:textSize="20sp" />
+	    
+	</LinearLayout>
+	
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp" >
+
+	    <Button
+	        android:id="@+id/playButtonId"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="@string/playButton"
+	        android:textSize="25sp"
+	        android:textStyle="bold"
+	        android:textColor="#fff"
+	        android:background="#e74c3c" />
+    
+    </LinearLayout>
+
+
+</LinearLayout>

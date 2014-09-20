@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RockPaperScissors</string>
+    <string name="game_name">Rock Paper Scissors</string>
+    <string name="username">Enter your Username</string>
+    <string name="age">Enter your Age</string>
+    <string name="gender">Enter your Gender</string>
+    <string name="submitButton">Submit</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="title_activity_game_play">GamePlayActivity</string>
+    <string name="usernamefield">Username:</string>
+    <string name="agefield">Age:</string>
+    <string name="genderfield">Gender:</string>
+    <string name="wonfield">Won:</string>
+    <string name="lostfield">Lost:</string>
+    <string name="drawfield">Draw:</string>
+    <string name="playButton">Play Game</string>
+    
+    <string name="title_activity_game">GameActivity</string>    
+    <string name="instructionsTitle">Instructions</string>
+    <string name="instructions">Rock can beat Scissors, Scissors can beat Paper and Paper can beat Rock. Play the game by clicking on your choice. </string>
+    <string name="rock">Rock</string>
+    <string name="paper">Paper</string>
+    <string name="scissors">Scissors</string>
+    <string name="title_activity_result">ResultActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>

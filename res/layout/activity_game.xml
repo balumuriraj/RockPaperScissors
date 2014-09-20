@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:padding="30dp"
+    android:orientation="vertical" 
+    tools:context="com.hidroids.rockpaperscissors.GameActivity" >
+
+    <TextView
+        android:id="@+id/instructionsTitleId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/instructionsTitle" 
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+    
+    <TextView
+        android:id="@+id/instructionsId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/instructions" />
+
+    <Button
+        android:id="@+id/rockButtonId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/instructionsId"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:layout_weight="1"
+        android:text="@string/rock"
+        android:textSize="25sp" 
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:background="#f06060" />
+    
+    <Button
+        android:id="@+id/paperButtonId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rockButtonId"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_weight="1"
+        android:text="@string/paper"
+        android:textColor="#fff"
+        android:background="#3498db" />
+    
+    <Button
+        android:id="@+id/scissorsButtonId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/paperButtonId"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_weight="1"
+        android:text="@string/scissors"
+        android:textColor="#fff"
+        android:background="#f39c12" />
+
+</LinearLayout>

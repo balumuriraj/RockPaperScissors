@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f06060"
+    android:padding="50dp"
+    android:orientation="vertical" 
+    tools:context="com.hidroids.rockpaperscissors.MainActivity" >
+
+    <TextView
+        android:id="@+id/gameNameId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/game_name"
+        android:textColor="#fff"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/usernameId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center_horizontal"
+        android:background="#fff"
+        android:padding="10dp"
+        android:hint="@string/username" />
+
+    <EditText
+        android:id="@+id/ageId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="#eee"
+        android:padding="10dp"
+        android:hint="@string/age"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/genderId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="#f8f8f8"
+        android:padding="10dp"
+        android:hint="@string/gender" />
+    
+    <Button 
+        android:id="@+id/submitButtonId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp" 
+        android:padding="10dp"
+        android:text="@string/submitButton"
+        android:onClick="submitUser"
+        android:textColor="#fff"
+        android:background="#555"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
