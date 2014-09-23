@@ -37,16 +37,14 @@
         android:padding="10dp"
         android:hint="@string/age"
         android:inputType="number" />
-
-    <EditText
+    
+    <Spinner
         android:id="@+id/genderId"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:background="#f8f8f8"
-        android:padding="10dp"
-        android:hint="@string/gender" />
+        android:background="#eee"
+        android:gravity="center" />
     
     <Button 
         android:id="@+id/submitButtonId"

@@ -1,14 +1,14 @@
 package com.hidroids.rockpaperscissors;
 
-import java.io.Serializable;
-
-import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -19,6 +19,12 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        Spinner spinner = (Spinner) findViewById(R.id.genderId);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.gender_spinner, R.layout.my_spinner_textview);
+        adapter.setDropDownViewResource(R.layout.my_spinner_textview);
+        spinner.setAdapter(adapter);
     }
 
 
@@ -45,17 +51,18 @@ public class MainActivity extends ActionBarActivity {
     	Intent intent = new Intent(this, GamePlayActivity.class);
     	EditText username_edit = (EditText) findViewById(R.id.usernameId);
     	EditText age_edit = (EditText) findViewById(R.id.ageId); 
-    	EditText gender_edit = (EditText) findViewById(R.id.genderId); 
+    	Spinner gender_edit = (Spinner) findViewById(R.id.genderId); 
     	
-    	if(!username_edit.getText().toString().equals("") && !age_edit.getText().toString().equals("") && !gender_edit.getText().toString().equals("")){
+    	if(!username_edit.getText().toString().equals("") && !age_edit.getText().toString().equals("")
+    			&& !gender_edit.getSelectedItem().toString().equals("Select Gender")){
     		
     		String username = username_edit.getText().toString();
         	int age = Integer.parseInt(age_edit.getText().toString());
-        	String gender = gender_edit.getText().toString();
+        	String gender = gender_edit.getSelectedItem().toString();
     		
 	    	userdbops = new UserOperations(getBaseContext());
 	        userdbops.open();
-	        User user = userdbops.getUser(username);
+	        User user = userdbops.getUser(username, age, gender);
 	        if(user == null){
 	        	user = userdbops.insertUser(username, age, gender, 0, 0, 0);
 	        }

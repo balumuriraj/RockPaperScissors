@@ -21,10 +21,18 @@
     <string name="title_activity_game">GameActivity</string>    
     <string name="instructionsTitle">Instructions</string>
     <string name="instructions">Rock can beat Scissors, Scissors can beat Paper and Paper can beat Rock. Play the game by clicking on your choice. </string>
+    <string name="voice_input">Voice Input</string>
     <string name="rock">Rock</string>
     <string name="paper">Paper</string>
     <string name="scissors">Scissors</string>
     <string name="title_activity_result">ResultActivity</string>
     <string name="hello_world">Hello world!</string>
+    
+    <string-array name="gender_spinner">
+        <item>Select Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
 
 </resources>

@@ -1,20 +1,24 @@
 package com.hidroids.rockpaperscissors;
 
-import com.hidroids.rockpaperscissors.GameResult.Choice;
-import com.hidroids.rockpaperscissors.GameResult.Result;
+import java.util.ArrayList;
 
-import android.support.v7.app.ActionBarActivity;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
+
+import com.hidroids.rockpaperscissors.GameResult.Choice;
+import com.hidroids.rockpaperscissors.GameResult.Result;
 
 public class GameActivity extends ActionBarActivity implements android.view.View.OnClickListener {
 
+	private static final int REQUEST_CODE = 1234;
 	private GameResult gameResult;
 	private User user;
 	private UserOperations userdbops;
@@ -27,10 +31,12 @@ public class GameActivity extends ActionBarActivity implements android.view.View
 		user = (User) intent.getSerializableExtra("user");
 		setContentView(R.layout.activity_game);
 		
+		ImageButton voice = (ImageButton) findViewById(R.id.voiceButtonId);
 		Button rockButton = (Button) findViewById(R.id.rockButtonId);
 		Button paperButton = (Button) findViewById(R.id.paperButtonId);
 		Button scissorsButton = (Button) findViewById(R.id.scissorsButtonId);
 		
+		voice.setOnClickListener(this);
 		rockButton.setOnClickListener(this);
 		paperButton.setOnClickListener(this);
 		scissorsButton.setOnClickListener(this);
@@ -70,11 +76,22 @@ public class GameActivity extends ActionBarActivity implements android.view.View
 			case R.id.scissorsButtonId:
 				gameResult.setUserChoice(Choice.SCISSORS);
 				break;
+			case R.id.voiceButtonId: {
+				startVoiceIntent("Say Rock, Paper or Scissors");
+		        return;
+			}
 		}
 		
 		playGame(gameResult);
 	}
 	
+	private void startVoiceIntent(String prompt) {
+		Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, prompt);
+        startActivityForResult(intent, REQUEST_CODE);
+	}
+
 	public void playGame(GameResult gameResult){
 		int random = ((int)(Math.random() * 10)) % 3;
 		
@@ -145,4 +162,35 @@ public class GameActivity extends ActionBarActivity implements android.view.View
 		intent.putExtra("gameResult", gameResult);
 		startActivity(intent);
 	}
+	
+	@Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK)
+        {
+            ArrayList<String> matches = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+            if (matches.contains("rock")) {
+            	gameResult = new GameResult();
+            	gameResult.setUserChoice(Choice.ROCK);
+            	playGame(gameResult);
+            } else if (matches.contains("paper")) {
+            	gameResult = new GameResult();
+            	gameResult.setUserChoice(Choice.PAPER);
+            	playGame(gameResult);
+            } else if (matches.contains("scissors")) {
+            	gameResult = new GameResult();
+            	gameResult.setUserChoice(Choice.SCISSORS);
+            	playGame(gameResult);
+            } else {
+            	try {
+					Thread.sleep(500);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            	startVoiceIntent("Try again");
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 }

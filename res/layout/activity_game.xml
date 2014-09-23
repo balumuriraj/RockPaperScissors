@@ -21,12 +21,30 @@
         android:layout_height="wrap_content"
         android:text="@string/instructions" />
 
+    <ImageButton
+        android:id="@+id/voiceButtonId"
+        android:src="@drawable/microphone_icon"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="25dp"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/voice_input"
+        android:background="@null" />
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:textSize="25sp"
+        android:gravity="center_horizontal"
+        android:text="OR" />
+    
     <Button
         android:id="@+id/rockButtonId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/instructionsId"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:layout_weight="1"
         android:text="@string/rock"
@@ -39,8 +57,6 @@
         android:id="@+id/paperButtonId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rockButtonId"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -53,8 +69,6 @@
         android:id="@+id/scissorsButtonId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/paperButtonId"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:textSize="25sp"
         android:textStyle="bold"

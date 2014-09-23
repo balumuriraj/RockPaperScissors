@@ -45,7 +45,7 @@ public class UserOperations {
 		db.insert(DataHandler.TABLE_NAME, null, content);
 		Log.d("INSERT", "inserting data done..." + DataHandler.TABLE_NAME);
 		//get
-		User user = getUser(username);		
+		User user = getUser(username, age, gender);		
 		return user;
 	}
 	
@@ -61,15 +61,15 @@ public class UserOperations {
 			
 			//update
 			Log.d("UPDATE", "updating data..." + DataHandler.TABLE_NAME);
-			db.update(DataHandler.TABLE_NAME, content, DataHandler.USERNAME +" = '"+ user.getUsername() +"'", null);
+			db.update(DataHandler.TABLE_NAME, content, DataHandler.USERNAME +" = '"+ user.getUsername() +"' AND " + DataHandler.AGE + " = '" + user.getAge() +"' AND " + DataHandler.GENDER + " = '" + user.getGender() + "'", null);
 			Log.d("UPDATE", "updating data done..." + DataHandler.TABLE_NAME);
 		
 			return user;
 		}
 	
 	//retrieving all values from db
-	public User getUser(String username){
-		Cursor cursor = db.query(DataHandler.TABLE_NAME, USER_TABLE_COLUMNS, DataHandler.USERNAME +" = '"+ username +"'", null, null, null, null);
+	public User getUser(String username, int age, String gender){
+		Cursor cursor = db.query(DataHandler.TABLE_NAME, USER_TABLE_COLUMNS, DataHandler.USERNAME +" = '"+ username +"' AND " + DataHandler.AGE + " = '" + age +"' AND " + DataHandler.GENDER + " = '" + gender + "'", null, null, null, null);
 		
 		User user =null;
 		
